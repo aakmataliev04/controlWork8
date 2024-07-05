@@ -1,0 +1,42 @@
+.main-container {
+  background: #88bdbc;
+  background: linear-gradient(45deg, #254e58 0%, #112D32 100%);
+  min-height: 80vh;
+}
+.sidenav {
+  background: #112D32;
+  opacity: 0.5;
+  height: max-content;
+  width: 18vw;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  position: fixed;
+  z-index: 1;
+  top: 20vh;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 3px 8px 3px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
