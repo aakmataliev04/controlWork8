@@ -3,6 +3,7 @@
   background: linear-gradient(45deg, #254e58 0%, #112D32 100%);
   min-height: 80vh;
 }
+
 .sidenav {
   background: #112D32;
   opacity: 0.5;
@@ -30,13 +31,12 @@
   color: #f1f1f1;
 }
 
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0 10px;
-}
-
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }

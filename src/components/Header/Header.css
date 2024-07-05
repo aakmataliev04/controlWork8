@@ -32,6 +32,7 @@
 .nav-link:hover {
   color: #112D32;
 }
+
 .nav-item:nth-child(1) {
   padding-right: 10px;
   border-right: 3px solid #112D32;

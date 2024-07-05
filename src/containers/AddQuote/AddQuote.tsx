@@ -19,10 +19,10 @@ const AddQuote: React.FC = () => {
   const fetchPost = useCallback(async () => {
     if (id) {
       setIsLoading(true);
-      const {data: loadedPost} = await axiosApi.get<QuoteApi>(`/quotes/${id}.json`);
+      const {data: loadedQuote} = await axiosApi.get<QuoteApi>(`/quotes/${id}.json`);
 
-      if (loadedPost !== null) {
-        setQuoteMutation({author: loadedPost.author, text: loadedPost.text, category: loadedPost.category});
+      if (loadedQuote !== null) {
+        setQuoteMutation({author: loadedQuote.author, text: loadedQuote.text, category: loadedQuote.category});
         setIsLoading(false);
       }
     }
@@ -43,7 +43,7 @@ const AddQuote: React.FC = () => {
     e.preventDefault();
     setIsLoading(true);
 
-   const quote = {...quoteMutation};
+    const quote = {...quoteMutation};
     try {
       if (id !== undefined) {
         await axiosApi.put(`/quotes/${id}.json`, quote);
@@ -107,7 +107,6 @@ const AddQuote: React.FC = () => {
       <h2>{id ? 'Edit Quote' : 'Add New Quote'}</h2>
 
       {form}
-
     </div>
 
   );

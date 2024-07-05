@@ -6,11 +6,10 @@ import axiosApi from '../../../axiosApi';
 
 interface Props {
   quote: Quote;
-  alonePost?: boolean;
-  reFetchQuotes: ()=>void
+  reFetchQuotes: () => void
 }
 
-const QuoteItem: React.FC<Props> = ({quote,reFetchQuotes}) => {
+const QuoteItem: React.FC<Props> = ({quote, reFetchQuotes}) => {
   const deleteQuote = async () => {
     try {
       await axiosApi.delete(`/quotes/${quote.id}.json`);
@@ -28,8 +27,8 @@ const QuoteItem: React.FC<Props> = ({quote,reFetchQuotes}) => {
         <p className={'quote-text'}>"{quote.text}"</p>
       </div>
       <div className="quote-button-wrapper">
-            <button onClick={deleteQuote} className="quote-btn outline">Delete</button>
-            <Link to={`/quotes/${quote.id}/edit`} className="quote-btn fill">Edit &gt;&gt;</Link>
+        <button onClick={deleteQuote} className="quote-btn outline">Delete</button>
+        <Link to={`/quotes/${quote.id}/edit`} className="quote-btn fill">Edit &gt;&gt;</Link>
       </div>
     </div>
   );

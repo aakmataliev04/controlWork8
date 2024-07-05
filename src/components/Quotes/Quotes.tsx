@@ -4,7 +4,6 @@ import QuoteItem from './QuoteItem/QuoteItem';
 import './Quotes.css';
 
 
-
 interface Props {
   quotes: Quote[] | undefined;
   reFetchQuotes: () => void

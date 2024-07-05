@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Quote, QuoteApi, QuotesApi} from '../../types';
+import {Quote, QuotesApi} from '../../types';
 import axiosApi from '../../axiosApi';
 import Quotes from '../../components/Quotes/Quotes';
 import Preloader from '../../components/Preloader/Preloader';
@@ -29,7 +29,6 @@ const Home = () => {
         }
 
       } else {
-
         const {data: quotes} = await axiosApi.get<QuotesApi | null>('/quotes.json');
 
         if (quotes !== null) {
@@ -41,15 +40,11 @@ const Home = () => {
           });
           setPosts(formattedQuotes);
         }
-
       }
-
 
     } finally {
       setIsLoading(false);
     }
-
-
   }, [category]);
 
   useEffect(() => {
